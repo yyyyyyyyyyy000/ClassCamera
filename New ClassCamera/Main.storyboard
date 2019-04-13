@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClassCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L0T-a8-DDL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="gvh-8I-ZGY"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="custom" id="ZHY-mK-RIc" customClass="CustomCollectionViewCell" customModule="ClassCamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7i-83-iYA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="29.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ng-rU-VoO">
+                                                    <rect key="frame" x="0.0" y="29.5" width="50" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="q7i-83-iYA" firstAttribute="top" secondItem="ZHY-mK-RIc" secondAttribute="top" id="4AQ-ZE-O0z"/>
+                                            <constraint firstItem="1Ng-rU-VoO" firstAttribute="top" secondItem="q7i-83-iYA" secondAttribute="bottom" id="DB6-lW-tuJ"/>
+                                            <constraint firstItem="q7i-83-iYA" firstAttribute="leading" secondItem="ZHY-mK-RIc" secondAttribute="leading" id="H61-ii-AY5"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Ng-rU-VoO" secondAttribute="trailing" id="Wgn-Vx-sgF"/>
+                                            <constraint firstItem="1Ng-rU-VoO" firstAttribute="leading" secondItem="ZHY-mK-RIc" secondAttribute="leading" id="cfi-7V-9EY"/>
+                                            <constraint firstAttribute="trailing" secondItem="q7i-83-iYA" secondAttribute="trailing" id="eBZ-k4-RIn"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Ng-rU-VoO" secondAttribute="bottom" id="gWI-c3-qek"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="NameOfAlbum" destination="1Ng-rU-VoO" id="k2D-64-PaJ"/>
+                                            <outlet property="photoImage" destination="q7i-83-iYA" id="GTy-tI-SKd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L0T-a8-DDL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Agg-nl-CKx"/>
+                            <constraint firstItem="L0T-a8-DDL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ThD-dY-MGq"/>
+                            <constraint firstItem="L0T-a8-DDL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XUR-VB-lvF"/>
+                            <constraint firstItem="L0T-a8-DDL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="z4S-LJ-amh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="L0T-a8-DDL" id="yBa-YZ-Unr"/>
+                        <segue destination="w03-ea-lle" kind="show" identifier="toTake" id="pff-WH-6ol"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Main PhotoVC-->
+        <scene sceneID="e6H-Fb-PMr">
+            <objects>
+                <viewController id="w03-ea-lle" customClass="MainPhotoVC" customModule="ClassCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OvT-b9-xQo"/>
+                        <viewControllerLayoutGuide type="bottom" id="YER-Zt-YHV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uMj-Zt-pfP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="P9O-Bj-SxA"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6R-iS-Rwm" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="-624"/>
+        </scene>
+    </scenes>
+</document>

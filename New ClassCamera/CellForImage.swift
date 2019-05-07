@@ -9,5 +9,15 @@
 import UIKit
 
 class CellForImage: UICollectionViewCell {
+
+    
+    
+    
+    @IBOutlet weak var imageShow: UIImageView!
+    
+    var isPicked = false
     
 }
+
+
+

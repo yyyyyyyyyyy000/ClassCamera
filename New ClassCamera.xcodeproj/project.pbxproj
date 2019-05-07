@@ -7,21 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5D99F002258FC9800DFB490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99EFF2258FC9800DFB490 /* AppDelegate.swift */; };
-		B5D99F022258FC9800DFB490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F012258FC9800DFB490 /* ViewController.swift */; };
-		B5D99F052258FC9800DFB490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D99F032258FC9800DFB490 /* Main.storyboard */; };
+		7E784D721F9116DD5EBCEB11 /* Pods_New_ClassCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173561694CD893EE6A0BC652 /* Pods_New_ClassCamera.framework */; };
 		B5D99F072258FC9900DFB490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D99F062258FC9900DFB490 /* Assets.xcassets */; };
 		B5D99F0A2258FC9900DFB490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D99F082258FC9900DFB490 /* LaunchScreen.storyboard */; };
+		B5D99F122258FD9200DFB490 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D99F112258FD9200DFB490 /* SnapKit.framework */; };
+		B5D99F1B2258FDC900DFB490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F142258FDC900DFB490 /* AppDelegate.swift */; };
+		B5D99F1C2258FDC900DFB490 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F152258FDC900DFB490 /* CameraController.swift */; };
+		B5D99F1D2258FDC900DFB490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D99F162258FDC900DFB490 /* Main.storyboard */; };
+		B5D99F1E2258FDC900DFB490 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F172258FDC900DFB490 /* CustomCollectionViewCell.swift */; };
+		B5D99F1F2258FDC900DFB490 /* photoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F182258FDC900DFB490 /* photoModel.swift */; };
+		B5D99F202258FDC900DFB490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F192258FDC900DFB490 /* ViewController.swift */; };
+		B5D99F212258FDC900DFB490 /* MainPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F1A2258FDC900DFB490 /* MainPhotoVC.swift */; };
+		B5D99F232259033400DFB490 /* pickedAlbumAndItsSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F222259033400DFB490 /* pickedAlbumAndItsSum.swift */; };
+		B5D99F272259FF2A00DFB490 /* CellForImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F262259FF2A00DFB490 /* CellForImage.swift */; };
+		B5D99F29225A07E300DFB490 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F28225A07E300DFB490 /* PhotoViewController.swift */; };
+		B5D99F2B225B0C4800DFB490 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D99F2A225B0C4800DFB490 /* DisplayVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046035F56B4B9BABEA520F4D /* Pods-New ClassCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New ClassCamera.debug.xcconfig"; path = "Target Support Files/Pods-New ClassCamera/Pods-New ClassCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		173561694CD893EE6A0BC652 /* Pods_New_ClassCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_New_ClassCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D99EFC2258FC9800DFB490 /* New ClassCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "New ClassCamera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5D99EFF2258FC9800DFB490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5D99F012258FC9800DFB490 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5D99F042258FC9800DFB490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5D99F062258FC9900DFB490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D99F092258FC9900DFB490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B5D99F0B2258FC9900DFB490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D99F0B2258FC9900DFB490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		B5D99F112258FD9200DFB490 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D99F132258FDC800DFB490 /* New ClassCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "New ClassCamera-Bridging-Header.h"; path = "../New ClassCamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5D99F142258FDC900DFB490 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		B5D99F152258FDC900DFB490 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraController.swift; path = ../CameraController.swift; sourceTree = "<group>"; };
+		B5D99F162258FDC900DFB490 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B5D99F172258FDC900DFB490 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = ../CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5D99F182258FDC900DFB490 /* photoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = photoModel.swift; path = ../photoModel.swift; sourceTree = "<group>"; };
+		B5D99F192258FDC900DFB490 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		B5D99F1A2258FDC900DFB490 /* MainPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPhotoVC.swift; path = ../MainPhotoVC.swift; sourceTree = "<group>"; };
+		B5D99F222259033400DFB490 /* pickedAlbumAndItsSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = pickedAlbumAndItsSum.swift; path = ../pickedAlbumAndItsSum.swift; sourceTree = "<group>"; };
+		B5D99F262259FF2A00DFB490 /* CellForImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellForImage.swift; path = ../CellForImage.swift; sourceTree = "<group>"; };
+		B5D99F28225A07E300DFB490 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = ../PhotoViewController.swift; sourceTree = "<group>"; };
+		B5D99F2A225B0C4800DFB490 /* DisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DisplayVC.swift; path = ../DisplayVC.swift; sourceTree = "<group>"; };
+		E8D3FD5B71148D8E1AF2AEEA /* Pods-New ClassCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New ClassCamera.release.xcconfig"; path = "Target Support Files/Pods-New ClassCamera/Pods-New ClassCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +52,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D99F122258FD9200DFB490 /* SnapKit.framework in Frameworks */,
+				7E784D721F9116DD5EBCEB11 /* Pods_New_ClassCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EE39903FD5354168E4A6297 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				046035F56B4B9BABEA520F4D /* Pods-New ClassCamera.debug.xcconfig */,
+				E8D3FD5B71148D8E1AF2AEEA /* Pods-New ClassCamera.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B5241437226DF77100EE5AE3 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				B5D99F142258FDC900DFB490 /* AppDelegate.swift */,
+				B5D99F0B2258FC9900DFB490 /* Info.plist */,
+				B5D99F132258FDC800DFB490 /* New ClassCamera-Bridging-Header.h */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		B5241439226DF89500EE5AE3 /* CoreModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5D99F222259033400DFB490 /* pickedAlbumAndItsSum.swift */,
+				B5D99F192258FDC900DFB490 /* ViewController.swift */,
+				B5D99F182258FDC900DFB490 /* photoModel.swift */,
+			);
+			name = CoreModel;
+			path = "New ClassCamera/CoreModel";
+			sourceTree = SOURCE_ROOT;
+		};
+		B524143B226DF8CD00EE5AE3 /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				B5D99F152258FDC900DFB490 /* CameraController.swift */,
+				B5D99F1A2258FDC900DFB490 /* MainPhotoVC.swift */,
+			);
+			path = CameraView;
+			sourceTree = "<group>";
+		};
+		B524143C226DF93200EE5AE3 /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				B5D99F172258FDC900DFB490 /* CustomCollectionViewCell.swift */,
+				B5D99F2A225B0C4800DFB490 /* DisplayVC.swift */,
+				B5D99F28225A07E300DFB490 /* PhotoViewController.swift */,
+				B5D99F262259FF2A00DFB490 /* CellForImage.swift */,
+			);
+			path = PhotoView;
+			sourceTree = "<group>";
+		};
 		B5D99EF32258FC9800DFB490 = {
 			isa = PBXGroup;
 			children = (
 				B5D99EFE2258FC9800DFB490 /* New ClassCamera */,
 				B5D99EFD2258FC9800DFB490 /* Products */,
+				7EE39903FD5354168E4A6297 /* Pods */,
+				B662FBC8EDCABA1AEF6A7E77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +131,24 @@
 		B5D99EFE2258FC9800DFB490 /* New ClassCamera */ = {
 			isa = PBXGroup;
 			children = (
-				B5D99EFF2258FC9800DFB490 /* AppDelegate.swift */,
-				B5D99F012258FC9800DFB490 /* ViewController.swift */,
-				B5D99F032258FC9800DFB490 /* Main.storyboard */,
-				B5D99F062258FC9900DFB490 /* Assets.xcassets */,
+				B5241437226DF77100EE5AE3 /* Supporting files */,
+				B5241439226DF89500EE5AE3 /* CoreModel */,
+				B524143B226DF8CD00EE5AE3 /* CameraView */,
+				B524143C226DF93200EE5AE3 /* PhotoView */,
+				B5D99F162258FDC900DFB490 /* Main.storyboard */,
 				B5D99F082258FC9900DFB490 /* LaunchScreen.storyboard */,
-				B5D99F0B2258FC9900DFB490 /* Info.plist */,
+				B5D99F062258FC9900DFB490 /* Assets.xcassets */,
 			);
 			path = "New ClassCamera";
+			sourceTree = "<group>";
+		};
+		B662FBC8EDCABA1AEF6A7E77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5D99F112258FD9200DFB490 /* SnapKit.framework */,
+				173561694CD893EE6A0BC652 /* Pods_New_ClassCamera.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5D99F0E2258FC9900DFB490 /* Build configuration list for PBXNativeTarget "New ClassCamera" */;
 			buildPhases = (
+				4EE835B9D7C1F0B9E894DEC9 /* [CP] Check Pods Manifest.lock */,
 				B5D99EF82258FC9800DFB490 /* Sources */,
 				B5D99EF92258FC9800DFB490 /* Frameworks */,
 				B5D99EFA2258FC9800DFB490 /* Resources */,
+				83FCEE3F93EE4E39F13DEB44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +185,7 @@
 				TargetAttributes = {
 					B5D99EFB2258FC9800DFB490 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -122,35 +212,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D99F1D2258FDC900DFB490 /* Main.storyboard in Resources */,
 				B5D99F0A2258FC9900DFB490 /* LaunchScreen.storyboard in Resources */,
 				B5D99F072258FC9900DFB490 /* Assets.xcassets in Resources */,
-				B5D99F052258FC9800DFB490 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EE835B9D7C1F0B9E894DEC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-New ClassCamera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83FCEE3F93EE4E39F13DEB44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-New ClassCamera/Pods-New ClassCamera-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-New ClassCamera/Pods-New ClassCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5D99EF82258FC9800DFB490 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D99F022258FC9800DFB490 /* ViewController.swift in Sources */,
-				B5D99F002258FC9800DFB490 /* AppDelegate.swift in Sources */,
+				B5D99F212258FDC900DFB490 /* MainPhotoVC.swift in Sources */,
+				B5D99F2B225B0C4800DFB490 /* DisplayVC.swift in Sources */,
+				B5D99F202258FDC900DFB490 /* ViewController.swift in Sources */,
+				B5D99F1C2258FDC900DFB490 /* CameraController.swift in Sources */,
+				B5D99F1E2258FDC900DFB490 /* CustomCollectionViewCell.swift in Sources */,
+				B5D99F272259FF2A00DFB490 /* CellForImage.swift in Sources */,
+				B5D99F232259033400DFB490 /* pickedAlbumAndItsSum.swift in Sources */,
+				B5D99F1F2258FDC900DFB490 /* photoModel.swift in Sources */,
+				B5D99F1B2258FDC900DFB490 /* AppDelegate.swift in Sources */,
+				B5D99F29225A07E300DFB490 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5D99F032258FC9800DFB490 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5D99F042258FC9800DFB490 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B5D99F082258FC9900DFB490 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,17 +417,22 @@
 		};
 		B5D99F0F2258FC9900DFB490 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046035F56B4B9BABEA520F4D /* Pods-New ClassCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L7M35DL93;
 				INFOPLIST_FILE = "New ClassCamera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tony2.New-ClassCamera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "New ClassCamera/New ClassCamera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,17 +440,21 @@
 		};
 		B5D99F102258FC9900DFB490 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D3FD5B71148D8E1AF2AEEA /* Pods-New ClassCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L7M35DL93;
 				INFOPLIST_FILE = "New ClassCamera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tony2.New-ClassCamera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "New ClassCamera/New ClassCamera-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

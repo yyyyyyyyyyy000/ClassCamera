@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 class photoModel:Codable{
     
-    var thePickedAlbum:String?
+    
+    var pickedItem:Int?
     
     var theNumberOfAlbum:Int?
     
@@ -18,6 +20,14 @@ class photoModel:Codable{
     var theNameofAlbums:[String]?
     
     var theUrlofAlbums:[Int:URL]?
+    
+    var pickedOne:[pickedAlbum]?
+    
+    var pickedTwice:pickedAlbum?
+    
+    
+    var picked:pickedAlbum?
+    
     
     static var shared = photoModel()
     
@@ -30,6 +40,7 @@ class photoModel:Codable{
         //        theNameofAlbums = [String]()
         //        theUrlofAlbums = [Int:URL]()
         //        Albumdic = [Int:String]()
+    
         let path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("Model")
         if let data = try? Data(contentsOf: path){
             let model = try! JSONDecoder().decode(photoModel.self, from: data)
@@ -37,12 +48,18 @@ class photoModel:Codable{
             theNameofAlbums = model.theNameofAlbums
             theUrlofAlbums = model.theUrlofAlbums
             Albumdic = model.Albumdic
-            thePickedAlbum = model.thePickedAlbum
+            pickedOne = model.pickedOne
+            picked = model.picked
+            pickedItem = model.pickedItem
+            
         }else{
             theNumberOfAlbum = -1
             theNameofAlbums = [String]()
             theUrlofAlbums = [Int:URL]()
             Albumdic = [Int:String]()
+            picked = pickedAlbum()
+            pickedOne = [pickedAlbum]()
+            pickedItem = Int()
             
         }
     }

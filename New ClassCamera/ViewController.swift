@@ -15,8 +15,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    
-    var pickedItem:Int?
+    let photoButton = UIButton()
+    var choosedIndexPath:IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,20 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     
+    @objc private func IntoAlbum(_ sender:UITapGestureRecognizer){
+        let cell = sender.view as! CustomCollectionViewCell
+        let albumName = cell.NameOfAlbum.text
+        photoModel.shared.pickedTwice = pickedAlbum()
+        photoModel.shared.pickedTwice!.AlbumName = albumName
+        for album in photoModel.shared.pickedOne!{
+            if album.AlbumName == albumName{
+                photoModel.shared.pickedTwice!.theTotalNumberofPhotoInthisAlbum = album.theTotalNumberofPhotoInthisAlbum!
+            }
+        }
+        performSegue(withIdentifier: "toAlbum", sender: CustomCollectionViewCell.self)
+    }
+    
+    
     private func createNewAlbum(with name:String){
         photoModel.shared.theNameofAlbums!.append(name)
         photoModel.shared.theNumberOfAlbum! += 1
@@ -40,23 +54,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         photoModel.shared.theUrlofAlbums![photoModel.shared.theNumberOfAlbum!] = url
         
         collectionView.reloadData()
-        
-        
     }
     
-    
-    @objc private func getPickedAlbum(_ sender:UILongPressGestureRecognizer){
-        let cell = sender.view as! CustomCollectionViewCell
-        if (sender.state == .began){
-            let nameofAlbum = cell.NameOfAlbum.text
-            print(nameofAlbum!)
-            photoModel.shared.thePickedAlbum = nameofAlbum
-            let path = collectionView.indexPath(for: cell)
-            pickedItem = path!.item
-            // collectionView.reloadItems(at: [path!])
-            collectionView.reloadData()
-        }
-    }
     
     
     @objc private func addNewAlbum(){
@@ -93,58 +92,132 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
 
 extension ViewController{
+    @objc private func pickAlbum(_ recognizer: UILongPressGestureRecognizer){
+        switch recognizer.state{
+        case .ended:
+            let cell = recognizer.view as! CustomCollectionViewCell
+            let path = collectionView.indexPath(for: cell)
+            photoModel.shared.pickedItem = path!.item
+            //cell.photoImage.image = UIImage(named: "pick")
+            let nameofAlbum = cell.NameOfAlbum.text!
+            var flag = false
+            for album in photoModel.shared.pickedOne!{
+                if album.AlbumName == nameofAlbum{
+                    flag = true
+                    photoModel.shared.picked = album
+                }
+            }
+            if !flag{
+                let newAlbum = pickedAlbum()
+                newAlbum.AlbumName = nameofAlbum
+                newAlbum.theTotalNumberofPhotoInthisAlbum = 0
+                photoModel.shared.pickedOne?.append(newAlbum)
+                photoModel.shared.picked = newAlbum
+            }
+            collectionView.reloadData()
+        default:break
+        }
+        
+        
+        
+        
+        
+        
+    }
+//    @objc private func move(_ recognizer: UIPanGestureRecognizer){
+//        let point = recognizer.translation(in: collectionView)
+//        switch recognizer.state{
+//        case .changed:
+//            photoButton.snp.remakeConstraints{(make) in
+//                make.height.equalTo(100)
+//                make.width.equalTo(100)
+//                make.top.equalTo(lastY!+point.y)
+//                make.left.equalTo(lastX!+point.x)
+//            }
+//        case .ended:
+//            lastY = lastY!+point.y
+//            lastX = lastX!+point.x
+//            let indexPath = collectionView.indexPathForItem(at: CGPoint(x: lastX!,y: lastY!))
+//            let cell = collectionView.cellForItem(at: indexPath!) as! CustomCollectionViewCell
+//            //            choosedIndexPath = indexPath!
+//            //            collectionView.reloadItems(at: [indexPath!])
+//
+//            let nameofAlbum = cell.NameOfAlbum.text!
+//            var flag = false
+//            for album in photoModel.shared.pickedOne!{
+//                if album.AlbumName == nameofAlbum{
+//                    flag = true
+//                    photoModel.shared.picked = album
+//                }
+//            }
+//            //第一次使用
+//            if !flag{
+//                let newAlbum = pickedAlbum()
+//                newAlbum.AlbumName = nameofAlbum
+//                newAlbum.theTotalNumberofPhotoInthisAlbum = 0
+//                photoModel.shared.pickedOne!.append(newAlbum)
+//                photoModel.shared.picked = newAlbum
+//            }
+//            // photoModel.shared.thePickedAlbum = nameofAlbum
+//            let path = collectionView.indexPath(for: cell)
+//            photoModel.shared.pickedItem = path!.item
+//            // collectionView.reloadItems(at: [path!])
+//            collectionView.reloadData()
+//        default:break
+//        }
+//
+//    }
+    
+    
     private func initView(){
         func initPhotoButton(){
-            let photoButton = UIButton()
             photoButton.titleLabel?.font = UIFont.systemFont(ofSize: 50)
             photoButton.setTitle("📸", for: .normal)
             photoButton.backgroundColor = .clear
             photoButton.addTarget(self, action: #selector(TakePhoto), for: UIControl.Event.touchUpInside)
             view.addSubview(photoButton)
             photoButton.snp.makeConstraints{(make) in
-                make.centerX.equalTo(view)
+                make.centerX.equalTo(screenWidth/2)
+             
                 make.width.equalTo(100)
                 make.height.equalTo(100)
                 make.top.equalTo(screenHeight*0.85)
+              
             }
+//            let recognizer = UIPanGestureRecognizer(target: self, action: #selector(move))
+//            photoButton.addGestureRecognizer(recognizer)
+            
         }
         
         
         func setCollectionviewLayout(){
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .vertical //设置滚动方向
-            layout.itemSize = CGSize(width: screenWidth*3/8, height: screenHeight*3/13)//设置cell的大小
-            layout.sectionInset = UIEdgeInsets(top: 0, left: screenWidth/10, bottom: screenHeight/8, right: screenWidth/10)//设置分组的间距
+            layout.itemSize = CGSize(width: screenWidth*3/8, height: screenWidth*3/8)//设置cell的大小
+            layout.sectionInset = UIEdgeInsets(top: 20, left: 27, bottom: 0, right: 27)//设置分组的间距
             layout.minimumLineSpacing = 20//设置最小行间距
-            layout.minimumInteritemSpacing = 10//设置小列间距
+            layout.minimumInteritemSpacing = 15//设置小列间距
             collectionView.collectionViewLayout = layout
-        }
-        
-        func initBackGroundImage(){
-            let imaView = UIImageView(image: UIImage(named: "地球"))
-            imaView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-            imaView.alpha = 0.2
-            view.addSubview(imaView)
         }
         
         func initAddButton(){
             let Addbutton = UIButton()
             Addbutton.setTitle("✚", for: .normal)
+           // Addbutton.setImage(UIImage(named: "add"), for: .normal)
             Addbutton.titleLabel?.font = UIFont.systemFont(ofSize: 50)
             Addbutton.setTitleColor(UIColor.black, for: .normal)
             Addbutton.sizeToFit()
             Addbutton.addTarget(self, action: #selector(addNewAlbum), for: UIControl.Event.touchUpInside)
             view.addSubview(Addbutton)
             Addbutton.snp.makeConstraints{(make) in
-                make.width.equalTo(50)
-                make.height.equalTo(50)
-                make.top.equalTo(30)
+                make.width.equalTo(100)
+                make.height.equalTo(100)
+                make.top.equalTo(screenHeight*0.85)
                 make.right.equalTo(0)
             }
         }
         
         
-        initBackGroundImage()
         initAddButton()
         initPhotoButton()
         setCollectionviewLayout()
@@ -170,22 +243,34 @@ extension ViewController{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "custom", for: indexPath) as! CustomCollectionViewCell
         
-        if pickedItem == nil{
-            cell.photoImage.image = UIImage(named: "涂鸦")
+        
+        cell.NameOfAlbum.text = photoModel.shared.Albumdic![indexPath.item]
+        let Intorecognizer = UITapGestureRecognizer(target: self, action: #selector(IntoAlbum))
+        cell.addGestureRecognizer(Intorecognizer)
+        let pickRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(pickAlbum))
+        pickRecognizer.minimumPressDuration = 0.3
+        
+        cell.addGestureRecognizer(pickRecognizer)
+        
+        
+        
+        if photoModel.shared.pickedItem == nil{
+            cell.photoImage.image = UIImage(named: "涂鸦")?.crop(ratio: 1)
         }else{
-            if indexPath.item == pickedItem{
-                cell.photoImage.image = UIImage(named: "简约")
+            if indexPath.item == photoModel.shared.pickedItem{
+                
+                cell.photoImage.image = UIImage(named: "pick")?.crop(ratio: 1)
             }else{
-                cell.photoImage.image = UIImage(named: "涂鸦")
+                let imageUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(photoModel.shared.Albumdic![indexPath.item]!+String(0))
+                let imageData = try? Data(contentsOf: imageUrl)
+                if imageData != nil{
+                    cell.photoImage.image = UIImage(data: imageData!)?.crop(ratio: 1)
+                }else{
+                    cell.photoImage.image = UIImage(named: "涂鸦")
+                }
             }
         }
         
-        let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(getPickedAlbum))
-        //  cell.photoImage.addGestureRecognizer(recognizer)
-        recognizer.minimumPressDuration = 0.5
-        cell.addGestureRecognizer(recognizer)
-        
-        cell.NameOfAlbum.text = photoModel.shared.Albumdic![indexPath.item]
         return cell
     }
     

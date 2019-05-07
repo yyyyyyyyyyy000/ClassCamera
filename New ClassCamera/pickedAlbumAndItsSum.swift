@@ -7,3 +7,18 @@
 //
 
 import Foundation
+class pickedAlbum:Codable{
+   
+    var theTotalNumberofPhotoInthisAlbum:Int?
+    
+    
+    var AlbumName:String?
+    
+    
+    init(){
+        theTotalNumberofPhotoInthisAlbum = Int()
+        AlbumName = String()
+    }
+    
+    
+}

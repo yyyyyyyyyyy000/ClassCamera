@@ -8,12 +8,15 @@
 
 import AVFoundation
 import UIKit
+
+
 class CameraController:NSObject, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession?
     var photoOutput: AVCapturePhotoOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
     var rearCamera: AVCaptureDevice?
     var rearCameraInput: AVCaptureDeviceInput?
+    //let queue = DispatchQueue(label: "a", qos: .userInteractive, attributes: .init(rawValue: 0), autoreleaseFrequency: .never, target: nil)
     
     var photoCaptureCompletionBlock:((UIImage?)->Void)?
     
@@ -22,8 +25,10 @@ class CameraController:NSObject, AVCapturePhotoCaptureDelegate {
 }
 
 extension CameraController {
+    
     func displayPreview(on view: UIView) throws {
         guard let captureSession = self.captureSession, captureSession.isRunning else { fatalError("CameraControllerError.captureSessionIsMissing") }
+        
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -39,7 +44,7 @@ extension CameraController {
             fatalError()
         }
         let settings = AVCapturePhotoSettings()
-        settings.flashMode = .auto
+        settings.flashMode = .off
         
         self.photoOutput?.capturePhoto(with: settings, delegate: self)
         self.photoCaptureCompletionBlock = completion
